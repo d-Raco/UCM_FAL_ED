@@ -1,0 +1,14 @@
+﻿  amain.cpp
+C:\hlocal\EDA\ED\Labs\Lab5\Project1\List.h(139,2): warning C4018: '<': signed/unsigned mismatch
+C:\hlocal\EDA\ED\Labs\Lab5\Project1\List.h(134): message : while compiling class template member function 'const T &List<T>::elem(unsigned int) const'
+          with
+          [
+              T=int
+          ]
+C:\hlocal\EDA\ED\Labs\Lab5\Project1\amain.cpp(31): message : see reference to function template instantiation 'const T &List<T>::elem(unsigned int) const' being compiled
+          with
+          [
+              T=int
+          ]
+C:\hlocal\EDA\ED\Labs\Lab5\Project1\amain.cpp(6): message : see reference to class template instantiation 'List<int>' being compiled
+  Project1.vcxproj -> C:\hlocal\EDA\ED\Labs\Lab5\Debug\Project1.exe

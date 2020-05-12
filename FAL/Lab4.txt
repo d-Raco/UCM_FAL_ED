@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std;
+
+/*
+Team number: I14
+Jose Ignasio Daguerre Garrido
+Ramón Costales de Ledesma
+
+We didn´t have any difficulties during the implementation. It was very straight forward, so we did it only in one step.
+
+COMPLEXITY 
+(BY recursive iterations)
+1 | k0 + sumOfNonNull(n,sum..)
+2 | k0 + k1 + sumOfNonNull(n - 1,sum..)
+...
+n times | k*n + sumOfNonNull(0,sum..)
+sumOfNull(n) = k*n -> O(n) Linear complexity 
+*/
+
+int sumOfNonNull(long long int num, int sum) {
+	int tmp = num;
+	if (num == 0)
+		return sum;
+	
+	while (tmp % 10 == 0)
+		tmp /= 10;
+
+	return sumOfNonNull(num - 1, sum + (tmp % 10));
+}
+
+int main() {
+	int num;
+
+	cin >> num;
+	while (num != 0) {
+		cout << sumOfNonNull(num, 0) << endl;
+		cin >> num;
+	}
+	
+	return 0;
+}

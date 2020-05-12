@@ -1,0 +1,18 @@
+﻿  amain.cpp
+C:\Users\josei\Desktop\Lab2\Lab2\Polynomial.h(73,13): warning C4244: '=': conversion from 'double' to 'A', possible loss of data
+          with
+          [
+              A=int
+          ]
+C:\Users\josei\Desktop\Lab2\Lab2\Polynomial.h(70): message : while compiling class template member function 'A Polynomial<A>::Evaluate(A)'
+          with
+          [
+              A=int
+          ]
+C:\Users\josei\Desktop\Lab2\Lab2\amain.cpp(26): message : see reference to function template instantiation 'A Polynomial<A>::Evaluate(A)' being compiled
+          with
+          [
+              A=int
+          ]
+C:\Users\josei\Desktop\Lab2\Lab2\amain.cpp(16): message : see reference to class template instantiation 'Polynomial<int>' being compiled
+  Lab2.vcxproj -> C:\Users\josei\Desktop\Lab2\Debug\Lab2.exe

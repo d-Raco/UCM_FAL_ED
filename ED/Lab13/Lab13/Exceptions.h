@@ -1,6 +1,4 @@
-﻿#pragma once
-
-/*
+﻿/*
   Implementation of exceptions needed for TADs.
 
  (c) Marco Antonio G�mez Mart�n, 2012
@@ -15,20 +13,20 @@
  */
 class ExcepcionTAD {
 public:
-    ExcepcionTAD() {}
-    ExcepcionTAD(const std::string& msg) : _msg(msg) {}
+	ExcepcionTAD() {}
+	ExcepcionTAD(const std::string& msg) : _msg(msg) {}
 
-    const std::string msg() const { return _msg; }
+	const std::string msg() const { return _msg; }
 
-    friend std::ostream& operator<<(std::ostream& out, const ExcepcionTAD& e);
+	friend std::ostream& operator<<(std::ostream& out, const ExcepcionTAD& e);
 
 protected:
-    std::string _msg;
+	std::string _msg;
 };
 
 inline std::ostream& operator<<(std::ostream& out, const ExcepcionTAD& e) {
-    out << e._msg;
-    return out;
+	out << e._msg;
+	return out;
 }
 
 
@@ -75,6 +73,10 @@ DEFINE_EXCEPTION(EInvalidAccess);
 /* For empty trees*/
 DEFINE_EXCEPTION(EEmptyTree);
 DEFINE_EXCEPTION(EWrongKey);
+/* Generic Ones*/
+DEFINE_EXCEPTION(EEmpty);
+
 
 #endif // __EXCEPCIONES_H
+
 

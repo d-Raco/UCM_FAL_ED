@@ -1,0 +1,6 @@
+﻿  amain.cpp
+c:\users\r\source\repos\lab13\lab13\lawtable.h(108): warning C4101: 'e': unreferenced local variable
+  c:\users\r\source\repos\lab13\lab13\lawtable.h(96): note: while compiling class template member function 'void LawTable<std::string,std::string,std::string,int>::removeNextCase(void)'
+  c:\users\r\source\repos\lab13\lab13\amain.cpp(47): note: see reference to function template instantiation 'void LawTable<std::string,std::string,std::string,int>::removeNextCase(void)' being compiled
+  c:\users\r\source\repos\lab13\lab13\amain.cpp(12): note: see reference to class template instantiation 'LawTable<std::string,std::string,std::string,int>' being compiled
+  Lab13.vcxproj -> C:\Users\R\source\repos\Lab13\Debug\Lab13.exe

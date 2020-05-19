@@ -1,10 +1,15 @@
 #include <iostream>
 #include <string>
-#include "Table.h"
+#include "LawTable.h"
 using namespace std;
 
+/*
+CREATE Y COMPLEJIDAD
+*/
+
+
 int main() {
-	Table<string, Table<string, Table<string, int>>> table = Table<string, Table<string, Table<string, int>>>();
+	LawTable<string, string, string, int> table = LawTable<string, string, string, int>();
 	int cases, num_operations, priority;
 	string op, ID, name, type;
 	cin >> cases;
@@ -17,28 +22,40 @@ int main() {
 				cin >> name;
 				cin >> type;
 				cin >> priority;
+				table.addCase(ID, name, type, priority);
 			}
 			else if (op == "get") {
 				cin >> ID;
+				try {
+					table.getCase(ID, name, type);
+					cout << name << " " << type << endl;
+				}
+				catch (EWrongKey & e) {
+					cout << e.msg() << endl;
+				}
 			}
 			else if (op == "next") {
-
+				try {
+					table.nextCase(ID, priority);
+					cout << ID << " " << priority << endl;
+				}
+				catch (EEmpty & e) {
+					cout << e.msg() << endl;
+				}
 			}
 			else if (op == "remove") {
-
+				table.removeNextCase();
 			}
 			else if (op == "empty") {
-
-			}
-			else {
-				cout << "Error command" << endl; //exception
+				if (table.empty())
+					cout << "yes" << endl;
+				else
+					cout << "no" << endl;
 			}
 		}
-
-		Table<string, Table<string, Table<string, int>>>::Iterator it = table.begin();
-		while (it != table.end()) {
-			table.remove(it.key());
-			it = table.begin();
+		
+		while (!table.empty()) {
+			table.removeNextCase();
 		}
 	}
 

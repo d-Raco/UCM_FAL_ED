@@ -120,9 +120,11 @@
   <ItemGroup>
     <ClInclude Include="Clothes.h" />
     <ClInclude Include="Exceptions.h" />
+    <ClInclude Include="Hash.h" />
     <ClInclude Include="List.h" />
     <ClInclude Include="SearchTree.h" />
     <ClInclude Include="StackLL.h" />
+    <ClInclude Include="Table.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

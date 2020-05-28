@@ -1,2 +1,33 @@
 ﻿  amain.cpp
+c:\users\r\source\repos\lab14\lab14\clothes.h(142): warning C4101: 'e': unreferenced local variable
+  c:\users\r\source\repos\lab14\lab14\clothes.h(133): note: while compiling class template member function 'Pieces Clothes<std::string,std::string,Pieces>::pieces(Shop,Model)'
+          with
+          [
+              Pieces=int,
+              Shop=std::string,
+              Model=std::string
+          ]
+  c:\users\r\source\repos\lab14\lab14\amain.cpp(61): note: see reference to function template instantiation 'Pieces Clothes<std::string,std::string,Pieces>::pieces(Shop,Model)' being compiled
+          with
+          [
+              Pieces=int,
+              Shop=std::string,
+              Model=std::string
+          ]
+  c:\users\r\source\repos\lab14\lab14\amain.cpp(8): note: see reference to class template instantiation 'Clothes<std::string,std::string,int>' being compiled
+c:\users\r\source\repos\lab14\lab14\clothes.h(74): warning C4101: 'e': unreferenced local variable
+  c:\users\r\source\repos\lab14\lab14\clothes.h(53): note: while compiling class template member function 'void Clothes<std::string,std::string,int>::addModel(Shop,Model,Pieces)'
+          with
+          [
+              Shop=std::string,
+              Model=std::string,
+              Pieces=int
+          ]
+  c:\users\r\source\repos\lab14\lab14\amain.cpp(25): note: see reference to function template instantiation 'void Clothes<std::string,std::string,int>::addModel(Shop,Model,Pieces)' being compiled
+          with
+          [
+              Shop=std::string,
+              Model=std::string,
+              Pieces=int
+          ]
   Lab14.vcxproj -> C:\Users\R\source\repos\Lab14\Debug\Lab14.exe

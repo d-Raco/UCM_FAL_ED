@@ -1,0 +1,51 @@
+// Hash.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include <iostream>
+#include <string>
+#include "Table.h"
+using namespace std;
+
+int main()
+{
+	//*
+	Table<string,int> t = Table<string,int>();
+	for (int i = 1; i <= 10; i++) {
+		t.insert("Paco"+to_string(i), i*7);
+		t.insert("Juan"+ to_string(i), i*2);
+		t.insert("Fran"+ to_string(i), i*9);
+	}
+	t.remove("Fran2");
+	if (t.exists("Fran"))
+		cout << "Value of Fran: " << t.get("Fran") << endl;
+	else
+		cout << "Not any value for Fran";
+	Table<string,int>::Iterator it = t.begin();
+	while (it != t.end()) {
+		cout << "Key: " << it.key() << ";  Value: " << it.value() << endl;
+		it.next();
+	}
+	//*/
+	
+	Table<string, int>* pt = new Table<string, int>();
+	for (int i = 1; i <= 100; i++)
+		pt->insert("s" + to_string(i), i);
+	Table<string, int>::Iterator pit = pt->begin();
+	while (pit != pt->end()) {
+		cout << "Key: " << pit.key() << ";  Value: " << pit.value() << endl;
+		pit.next();
+	}
+	delete pt;
+	//*/
+}
+
+// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
+// Debug program: F5 or Debug > Start Debugging menu
+
+// Tips for Getting Started: 
+//   1. Use the Solution Explorer window to add/manage files
+//   2. Use the Team Explorer window to connect to source control
+//   3. Use the Output window to see build output and other messages
+//   4. Use the Error List window to view errors
+//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
+//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file

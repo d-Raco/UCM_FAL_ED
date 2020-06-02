@@ -1,0 +1,55 @@
+// ED2exercise10.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include <iostream>
+#include <list>
+#include <stack>
+#include <string>
+using namespace std;
+
+/* It determines if an target order is possible, and the instructions to the
+vagons to get the target order*/
+bool isVagonsOrderPossible(int n, list<int>* target, string& instructions) {
+	int inVagon = 1;
+	bool blocked = false;
+	instructions = "";
+	stack<int>* station = new stack<int>();
+	while (!target->empty() && !blocked) {
+		if (!station->empty() && (station->top() == target->front())) {
+			instructions += "vagon " + to_string(station->top()) + " out\n";
+			station->pop();
+			target->pop_front();
+		}
+		else if (!station->empty() && (target->front() < station->top())) {
+			blocked = true;
+		}
+		else if(inVagon <= n) {
+			instructions += "vagon " + to_string(inVagon) + " in\n";
+			station->push(inVagon);
+			inVagon++;
+		}
+		else {
+			blocked = true;
+		}
+	}
+	return target->empty();
+}
+
+
+int main()
+{
+	list<int>* target = new list<int>();
+	target->push_back(4);
+	target->push_back(5);
+	target->push_back(3);
+	target->push_back(2);
+	target->push_back(1);
+	string instructions;
+	if (isVagonsOrderPossible(target->size(), target, instructions)) {
+		cout << "POSSIBLE"<<endl;
+		cout << instructions;
+	}
+	else{
+		cout << "IMPOSSIBLE";
+	}
+}

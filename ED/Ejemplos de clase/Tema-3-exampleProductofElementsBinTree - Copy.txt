@@ -1,0 +1,75 @@
+// EDp7.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include <iostream>
+#include "Bintree.h"
+#include "List.h"
+using namespace std;
+void example1();
+Bintree<int> readBintree();
+void showBintree(Bintree<int> t);
+
+/*Calculate the procuct of all the elements of a tree of integers. */
+int product(Bintree<int> t) {
+	// Base case
+	if (t.empty()) {
+		return 1;
+	// Recursive Case
+	} else {
+		return t.root() * product(t.leftChild()) * 
+			product(t.rightChild());
+	}
+}
+
+/* Try this example by typing in the console the following tree:
+(([1] 7 [3]) 4 [9])
+*/
+int main()
+{
+	Bintree<int> t = readBintree();
+	showBintree(t);
+	cout << endl << "Product: " << product(t) << endl;
+	
+}
+
+// It reads a binary tree of integers from the standard input
+Bintree<int> readBintree() {
+	char c;
+	cin >> c;
+	switch (c) {
+	case '#': return Bintree<int>();
+	case '[': {
+		int raiz;
+		cin >> raiz;
+		cin >> c;
+		return Bintree<int>(raiz);
+	}
+	case '(': {
+		Bintree<int> left = readBintree();
+		int root;
+		cin >> root;
+		Bintree<int> right = readBintree();
+		cin >> c;
+		return Bintree<int>(left, root, right);
+	}
+	default:
+		return Bintree<int>();
+	}
+}
+
+// It shows one tree using in-order tour
+void showBintree(Bintree<int> t) {
+	List<int> l = t.inorder();
+	List<int>::Iterator it = l.cbegin();
+	while (it != l.cend()) {
+		cout << it.elem() << " ";
+		it.next();
+	}
+}
+
+// Example of building and showing one tree
+void example1() {
+	Bintree<int> t1 = Bintree<int>(Bintree<int>(1), 7, Bintree<int>(3));
+	Bintree<int> t = Bintree<int>(t1, 4, Bintree<int>(9));
+	showBintree(t);
+}

@@ -1,7 +1,7 @@
 ﻿/*
 I14
-Jose Ignacio Daguerre Garrido
-Ramón Costales de Ledesma
+joseignaciodg
+Rymond3
 
 Steps:
 1. We considered implementing 2 pivots (first and last element) and a boolean which checks if the previous element of the sequence is even.

@@ -1,5 +1,5 @@
-﻿//JOSE IGNACIO DAGUERRE GARRIDO
-//RAMON COSTALES DE LEDESMA
+﻿//joseignaciodg
+//Rymond3
 #include <iostream>
 using namespace std;
 

@@ -1,5 +1,5 @@
-﻿//joseignaciodg
-//Rymond3
+//joseignaciodg
+//d-Raco
 #include <iostream>
 using namespace std;
 
